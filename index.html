@@ -1,104 +1,87 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>해누리 점심 ��봇</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        header p {
-            font-size: 1.1em;
-            opacity: 0.95;
-        }
-
-        .container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .chat-wrapper {
-            width: 100%;
-            max-width: 800px;
-            height: 600px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        footer {
-            background: rgba(0, 0, 0, 0.1);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9em;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            .chat-wrapper {
-                height: 500px;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 챗봇 - 고객 지원</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>🍽️ 해누리 점심 챗봇</h1>
-        <p>오늘의 메뉴 정보를 빠르게 확인하세요!</p>
-    </header>
-
+  <!-- 헤더 영역 -->
+  <header class="header">
     <div class="container">
-        <div class="chat-wrapper">
-            <iframe src="https://copilotstudio.microsoft.com/environments/Default-62ae463a-9f12-4edf-8544-4f6ca3834524/bots/copilots_header_70b1e/webchat?__version__=2"></iframe>
+      <div class="header-content">
+        <div class="logo-section">
+          <div class="logo-icon">💬</div>
+          <h1 class="logo-text">AI 챗봇</h1>
         </div>
+        <p class="header-subtitle">언제든지 도와드리겠습니다</p>
+      </div>
     </div>
+  </header>
 
-    <footer>
-        <p>&copy; 2026 해누리 점심 챗봇 | 더 편한 점심 시간을 위하여</p>
-    </footer>
+  <!-- 메인 콘텐츠 영역 -->
+  <main class="main-content">
+    <div class="container">
+      <div class="chatbot-wrapper">
+        <!-- 챗봇 컨테이너 -->
+        <div class="chatbot-container">
+          <div class="chatbot-header">
+            <div class="chatbot-header-content">
+              <div class="status-indicator"></div>
+              <span class="chatbot-title">챗봇과 대화하기</span>
+            </div>
+          </div>
+          <div class="chatbot-iframe-wrapper">
+            <iframe 
+              src="https://copilotstudio.microsoft.com/environments/Default-62ae463a-9f12-4edf-8544-4f6ca3834524/bots/copilots_header_70b1e/webchat?__version__=2" 
+              frameborder="0" 
+              class="chatbot-iframe"
+              title="AI 챗봇"
+              allow="microphone">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- 사이드바 정보 -->
+        <aside class="info-sidebar">
+          <div class="info-card">
+            <h3 class="info-title">📋 도움말</h3>
+            <ul class="info-list">
+              <li>24시간 언제든지 이용 가능합니다</li>
+              <li>질문을 자유롭게 입력해주세요</li>
+              <li>복잡한 문의는 상세히 설명해주시면 더 정확한 답변을 받을 수 있습니다</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-title">⚡ 빠른 질문</h3>
+            <div class="quick-questions">
+              <button class="quick-question-btn" data-question="안녕하세요">
+                안녕하세요
+              </button>
+              <button class="quick-question-btn" data-question="도움이 필요해요">
+                도움이 필요해요
+              </button>
+              <button class="quick-question-btn" data-question="서비스 안내">
+                서비스 안내
+              </button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- 푸터 영역 -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        © 2026 AI 챗봇 서비스. 모든 권리 보유.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
